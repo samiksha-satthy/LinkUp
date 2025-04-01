@@ -5,7 +5,7 @@
     <div class="max-w-7xl mx-auto">
       <div class="flex items-center justify-between">
         <div class="menu-left">
-          <a href="#" class="text-xl">Wey</a>
+          <a href="#" class="text-xl">LinkUp</a>
         </div>
 
         <div
@@ -83,9 +83,9 @@
 
         <div class="menu-right">
           <template v-if="userStore.user.isAuthenticated">
-            <a href="#">
+            <RouterLink :to="{name: 'profile', params:{'id': userStore.user.id}}">
               <img src="https://i.pravatar.cc/40?img=70" class="rounded-full" />
-            </a>
+            </RouterLink>
 
             <button
               @click="logout"
