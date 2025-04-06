@@ -12,7 +12,7 @@
           class="menu-center flex space-x-12"
           v-if="userStore.user.isAuthenticated"
         >
-          <a href="#" class="text-purple-700">
+          <RouterLink to="/feed" class="text-purple-700">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -27,7 +27,7 @@
                 d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
               />
             </svg>
-          </a>
+          </RouterLink>
 
           <a href="#">
             <svg
@@ -63,7 +63,7 @@
             </svg>
           </a>
 
-          <a href="#">
+          <RouterLink to="/search">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -78,7 +78,7 @@
                 d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
               ></path>
             </svg>
-          </a>
+          </RouterLink>
         </div>
 
         <div class="menu-right">
@@ -87,12 +87,6 @@
               <img src="https://i.pravatar.cc/40?img=70" class="rounded-full" />
             </RouterLink>
 
-            <button
-              @click="logout"
-              class="py-4 px-6 bg-red-600 text-white rounded-lg"
-            >
-              Log out
-            </button>
           </template>
 
           <template v-else>
@@ -128,13 +122,9 @@ export default {
   setup() {
     const userStore = useUserStore();
 
-    const logout = () => {
-      userStore.logout()
-    }
 
     return {
       userStore,
-      logout,
     };
   },
 

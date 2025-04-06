@@ -34,13 +34,6 @@ export const useUserStore = defineStore("user", {
       }
     },
 
-    logout() {
-        this.$router.push("/login");
-      console.log("logout");
-      this.user.isAuthenticated = false;
-      localStorage.removeItem("user");
-      
-    },
 
     setToken(data) {
       console.log("setToken", data);
